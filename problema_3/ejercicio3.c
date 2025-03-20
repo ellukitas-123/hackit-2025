@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 unsigned int	k_ocurrence(int search, int k, int *arr, int size)
 {
@@ -117,9 +118,40 @@ unsigned int	ft_atoi(char *str)
 
 int main()
 {
-	unsigned int casos;
-	unsigned int size;
-	unsigned int *arr;
-	
+	unsigned int	casos;
+	unsigned int	size;
+	char 			*str;
+	int				*arr;
+	char			**splitted;
+	int				fd;
+	char			*c;
+	char			*line;
+	int				i;
+	int				s;
 
+	scanf("%d %d", &size, &casos);
+	getchar();
+	s = 1;
+	line = (char *)malloc(s);
+	fd = open(stdin, O_RDONLY);
+	i = 0;
+	while ( (c = fgetc(fd)) != 0)
+	{
+		s++;
+		line = realloc(line, s);
+		line[s] = c; 
+		i++;
+	}
+	line[s] = 0;
+	printf("%s\n", line);
+	splitted = ft_split(line, " ");
+	printf("%s\n", line);
+	free(line);
+	int i = 0;
+	while (splitted[i])
+	{
+		arr[i] = ft_atoi(splitted[i]);
+		printf("%d\n", arr[i]);
+		i++;
+	}
 }
