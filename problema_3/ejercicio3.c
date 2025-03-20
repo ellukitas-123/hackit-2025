@@ -1,17 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-unsigned int k_ocurrence(int search, int k, int *arr, int size)
+unsigned int	k_ocurrence(int search, int k, int *arr, int size)
 {
-	int i = 0;
-	int ocurrences = 0;
+	int i;
+	int ocurrences;
+
+	i = 0;
+	ocurrences = 0;
 	while (i < size && ocurrences < k)
 	{
 		ocurrences += arr[i] == search ? 1 : 0;
 		i++;
 	}
 
-	return ocurrences == k ? i + 1 : 0;
+	return (ocurrences == k ? i + 1 : 0);
 }
 
 int	in_set(char c, char *set)
@@ -80,18 +83,37 @@ char	**ft_split(char *str, char *set)
 	}
 	return (strarr);
 }
-void	free_arr(char *str)
+
+void	free_arr(char **str)
 {
 	int	i;
 	
 	i = 0;
 	while (str[i])
 	{
-		free(str[i])
+		free(str[i]);
 		i++;
 	}
 	free(str);
 }
+
+int	ft_atoi(char *str)
+{
+	int	neg;
+	int	out;
+
+	out = 0;
+	neg = 1;
+	if (*str == '-')
+	{
+		str++;
+		neg = -1;
+	}
+	while (*str && *str >= '0' && *str <= '9')
+		out = out * 10 + (*str++ - '0');
+	return (neg * out);
+}
+
 
 int main()
 {
@@ -99,5 +121,13 @@ int main()
 	unsigned int size;
 	unsigned int *arr;
 	
+	char **str = ft_split("12 3 4546 ", " ");
+	int i = 0;
+	while (str[i])
+	{
+		printf("%d\n", ft_atoi(str[i]));
+		i++;
+	}
+	free(str);
 	return 0;
 }
