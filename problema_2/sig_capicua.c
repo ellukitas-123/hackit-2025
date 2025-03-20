@@ -163,8 +163,8 @@ int	main()
 	{
 		scanf("%llu", &n);
 		getchar();
-		if (es_capicua(n)) printf("%llu\n", sig_capicua(n + 1));
-		else printf("%llu\n", sig_capicua(n));
+		if (es_capicua(n)) printf("%llu\n", sig_capicua(n + 1) - n);
+		else printf("%llu\n", sig_capicua(n) - n);
 		i++;
 	}
 	return (0);
