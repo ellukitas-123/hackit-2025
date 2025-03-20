@@ -18,7 +18,10 @@ if __name__ == "__main__":
             exit(0)
         size = int(size)
         casos = int(casos)
-        arr = input()
+        try:
+            arr = input()
+        except:
+            exit(0)
         nums = []
         out = []
         for num in arr.split(" "):
