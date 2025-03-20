@@ -19,16 +19,16 @@ def arraytonumber(array):
 def encontrarcapicuasiguiente(array, dimension):
 
 
-    numero_actual = arraytonumber(array) + 1
+    numero = arraytonumber(array) + 1
 
     if dimension == 1:
-        return numero_actual
+        return numero
 
     else:
         while True:
-            if str(numero_actual) == str(numero_actual)[::-1]:
-                return numero_actual
-            numero_actual += 1
+            if str(numero) == str(numero)[::-1]:
+                return numero
+            numero += 1
 
 
 
@@ -38,11 +38,12 @@ def encontrardistancia(numeroorigen,numerodestino):
 if __name__ == "__main__":
     numero = int(input(" "))
     contadormax = numero
-    while i < contadormax:
+    contador = 0
+    while contador < contadormax:
             numero = int(input(" "))
             dimension = calculardimension(numero)
             array = numerotoarray(numero, dimension)
             capicua_siguiente = encontrarcapicuasiguiente(array, dimension)
             distancia = encontrardistancia(numero, capicua_siguiente)
             print(distancia)
-            i += 1
+            contador += 1
