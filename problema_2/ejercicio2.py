@@ -36,10 +36,13 @@ def encontrardistancia(numeroorigen,numerodestino):
     return numerodestino - numeroorigen
 
 if __name__ == "__main__":
-    while True:
+    numero = int(input(" "))
+    contadormax = numero
+    while i < contadormax:
             numero = int(input(" "))
             dimension = calculardimension(numero)
             array = numerotoarray(numero, dimension)
             capicua_siguiente = encontrarcapicuasiguiente(array, dimension)
             distancia = encontrardistancia(numero, capicua_siguiente)
             print(distancia)
+            i += 1
