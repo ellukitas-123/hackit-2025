@@ -1,4 +1,6 @@
-matriz_grafo = [];
+import read
+
+matriz_grafo = read.read();
 impares = 0
 
 for i in range(len(matriz_grafo)):
