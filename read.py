@@ -8,4 +8,3 @@ def read():
         m[int(line[1]) - 1][int(line[0]) - 1] += 1
         print(m)
     return m
-print(read())
