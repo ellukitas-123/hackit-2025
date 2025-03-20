@@ -1,13 +1,11 @@
 def read(n_calles):
-    n_inters = int(input())
-    m = [[0] * n_calles for i in range(n_inters)]
-    for i in range(n_calles):
-        line = input().split(" ")
-        print(line)
-        m[int(line[0]) - 1][int(line[1]) - 1] += 1
-        m[int(line[1]) - 1][int(line[0]) - 1] += 1
-        print(m)
-    return m
+		n_inters = int(input())
+		m = [[0] * n_calles for i in range(n_inters)]
+		for i in range(n_calles):
+				line = input().split(" ")
+				m[int(line[0]) - 1][int(line[1]) - 1] += 1
+				m[int(line[1]) - 1][int(line[0]) - 1] += 1
+		return m
 
 def es_recorrido_euclidiano(matriz_grafo):
 	impares = 0
@@ -25,7 +23,6 @@ def es_recorrido_euclidiano(matriz_grafo):
 if __name__ == "__main__":
 		while True:
 			n_calles = int(input())
-            print(n_calles)
 
 			if n_calles == 0:
 				break
