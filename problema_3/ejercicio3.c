@@ -97,10 +97,10 @@ void	free_arr(char **str)
 	free(str);
 }
 
-int	ft_atoi(char *str)
+unsigned int	ft_atoi(char *str)
 {
-	int	neg;
-	int	out;
+	unsigned int	neg;
+	unsigned int	out;
 
 	out = 0;
 	neg = 1;
@@ -121,13 +121,5 @@ int main()
 	unsigned int size;
 	unsigned int *arr;
 	
-	char **str = ft_split("12 3 4546 ", " ");
-	int i = 0;
-	while (str[i])
-	{
-		printf("%d\n", ft_atoi(str[i]));
-		i++;
-	}
-	free(str);
-	return 0;
+
 }
