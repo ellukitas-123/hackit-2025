@@ -86,6 +86,7 @@ unsigned long long	sig_capicua(unsigned long long n)
 	int					l;
 	int					i;
 
+	if (es_capicua(n)) return (n);
 	if (n <= 0) return (1);
 	arr = num2arr(n, &size);
 	all_nines = handle_nines(n, arr, size);
