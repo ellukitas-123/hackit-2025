@@ -6,5 +6,4 @@ def read():
         line = input().split(" ")
         m[int(line[0]) - 1][int(line[1]) - 1] += 1
         m[int(line[1]) - 1][int(line[0]) - 1] += 1
-        print(m)
     return m
