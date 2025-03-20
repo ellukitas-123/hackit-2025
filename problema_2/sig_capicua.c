@@ -31,7 +31,7 @@ int	*num2arr(unsigned long long n, int *size)
 		div++;
 	}
 	*size = div;
-	out = malloc(div * sizeof(int));
+	out = (int *)malloc(div * sizeof(int));
 	while (div > 0)
 	{
 		out[--div] = n % 10;
@@ -71,7 +71,7 @@ unsigned long long	handle_nines(unsigned long long n, int *arr, int size)
 	{
 		return (n + 2);
 	}
-	return (-1);
+	return (0);
 }
 
 unsigned long long	sig_capicua(unsigned long long n)
@@ -86,11 +86,10 @@ unsigned long long	sig_capicua(unsigned long long n)
 	int					l;
 	int					i;
 
-	if (es_capicua(n)) return (n);
 	if (n <= 0) return (1);
 	arr = num2arr(n, &size);
 	all_nines = handle_nines(n, arr, size);
-	if (all_nines != -1)
+	if (all_nines != 0)
 	{
 		free(arr);
 		return (all_nines);
@@ -152,9 +151,9 @@ unsigned long long	sig_capicua(unsigned long long n)
 
 int	main()
 {
-	unsigned long	casos;
-	unsigned long	n;
-	unsigned long	i;
+	unsigned long long	casos;
+	unsigned long long	n;
+	unsigned long long	i;
 
 	scanf("%llu", &casos);
 	getchar();
