@@ -27,7 +27,10 @@ if __name__ == "__main__":
         for num in arr.split(" "):
             nums += [int(num)]
         for i in range(casos):
-            ocurrencia, valor = input().split(" ")
+            try:
+                ocurrencia, valor = input().split(" ")
+            except:
+                continue
             ocurrencia = int(ocurrencia)
             valor = int(valor)
             out += [get_element(nums, ocurrencia, valor)]
