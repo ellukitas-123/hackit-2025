@@ -1,11 +1,4 @@
-int main()
-{
-	unsigned int casos;
-	unsigned int size;
-	unsigned int *arr;
-
-	return 0;
-}
+#include <stdio.h>
 
 unsigned int k_ocurrence(int search, int k, int *arr, int size)
 {
@@ -18,4 +11,14 @@ unsigned int k_ocurrence(int search, int k, int *arr, int size)
 	}
 
 	return ocurrences == k ? i + 1 : 0;
+}
+
+
+int main()
+{
+	unsigned int casos;
+	unsigned int size;
+	unsigned int *arr;
+
+	return 0;
 }
